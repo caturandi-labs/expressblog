@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1=title
+    ul.errors
+        if errors
+            each error, i in errors
+                .alert.alert-danger #{error.msg}
+    br
+    form(method='post', action='/categories/add')
+        .form-group
+            label Category Name
+            input.form-control(name='name', type='text', placeholder="Category name")
+        button.btn.btn-primary(type='submit', name='submit') Save Category
+        

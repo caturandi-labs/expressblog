@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+    h1=title
+    br
+    form(action="/users/login",method='post')
+        .form-group
+            label(for="username") Username
+            input(type="text" name="username", placeholder="Username")
+        .form-group
+            label(for="password") Password
+            input(type="password" name="password", placeholder="Password")
+        
+        button(type='submit',name='submit') Login
+                

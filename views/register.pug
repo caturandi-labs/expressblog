@@ -1,0 +1,23 @@
+extends layout
+
+block content
+
+    h1= title
+    br
+    form(action="/users/register/", method='post')
+        .form-group
+            label(for="name") Name
+            input(type="text", name='name',placeholder='Name')
+        .form-group
+            label(for="email") E-mail Address
+            input(type="email", name='email',placeholder='E-Mail Address')
+        .form-group
+            label(for="username") Username
+            input(type="text", name='username',placeholder='Username')
+        .form-group
+            label(for="password") Password
+            input(type="password", name='password',placeholder='Password')
+        .form-group
+            label(for="password") Re-type Password
+            input(type="password", name='password2',placeholder='Re-Type Password')
+        button(type='submit',name='submit') Registrasi

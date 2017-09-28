@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    title= title || ExpressBlog
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+   .container
+    img.logo(src='/images/logo.png')
+    nav
+     ul 
+      li 
+       a(href="/") Home
+       
+      if user
+       li 
+        a(href="/posts/add") Tambah Post
+       li 
+        a(href="/categories/add") Tambah Kategori
+       li
+        a(href="/users/logout") Logout
+      li 
+       a(href="/pages/about") About
+      li 
+       a(href="/pages/contact") Contact
+      
+      if !user
+       li
+        a(href="/users/register") Register
+       li
+        a(href="/users/login") Login
+
+    != messages()
+    block content
+    footer
+     p ExpressBlog | Catur Andi Undlabs &copy; 2017
+        

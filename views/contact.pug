@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+    h1= title
+
+    .contact
+        form(action="/pages/send", method='post')
+            .form-group
+                label Nama Lengkap
+                input(type="text", name='nama_lengkap', placeholder="Nama Lengkap")
+            .form-group
+                label Email
+                input(type="email", name='email', placeholder="Email")
+            .form-group
+                label Pesan
+                textarea(name="pesan", placeholder='Isi Pesan')
+            br
+            button(type='submit', name='submit') Kirim Pesan
+            
+            

@@ -1,0 +1,33 @@
+extends layout
+
+block content
+    h1=title
+    ul.errors
+        if errors
+            each error, i in errors
+                .alert.alert-danger #{error.msg}
+    form(method='post', action='/posts/add', enctype='multipart/form-data')
+        .form-group
+            label Title
+            input.form-control(name='title', type='text')
+        .form-group
+            label Category
+            select.form-control(name='category')
+                option(value="", selected="selected" , disabled="disabled") - Pilih Kategori -
+                each category , i in categories
+                    option(value='' + category.name) #{category.name}
+        .form-group
+            label Body
+            textarea.form-control(name="body",id="body")
+        .form-group
+            label Main Image
+            input.form-control(name='mainimage', type='file')    
+        .form-group
+            label Author
+            select.form-control(name='author')
+                option(value="Catur Andi") Catur Andi
+                option(value="Admin") Admin
+        button.btn.btn-primary(type='submit', name='submit') Save Post
+        script(src="/ckeditor/ckeditor.js")
+        script
+            | CKEDITOR.replace('body');
